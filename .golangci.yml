@@ -1,0 +1,92 @@
+version: "2"
+linters:
+  enable:
+  - asasalint
+  - asciicheck
+  - bidichk
+  - containedctx
+  - contextcheck
+  - copyloopvar
+  - cyclop
+  - decorder
+  - dogsled
+  - dupl
+  - dupword
+  - durationcheck
+  - embeddedstructfieldcheck
+  - err113
+  - errcheck
+  - errname
+  - errorlint
+  - exhaustive
+  - exptostd
+  - fatcontext
+  - forcetypeassert
+  - funcorder
+  - funlen
+  - gocheckcompilerdirectives
+  - gochecksumtype
+  - gocognit
+  - goconst
+  - gocritic
+  - godot
+  - godox
+  - goprintffuncname
+  - gosec
+  - gosmopolitan
+  - govet
+  - grouper
+  - iface
+  - importas
+  - inamedparam
+  - ineffassign
+  - interfacebloat
+  - intrange
+  - ireturn
+  - lll
+  - maintidx
+  - makezero
+  - mirror
+  - misspell
+  - mnd
+  - musttag
+  - nakedret
+  - nestif
+  - nilerr
+  - nilnesserr
+  - nilnil
+  - noctx
+  - noinlineerr
+  - nolintlint
+  - nonamedreturns
+  - nosprintfhostport
+  - perfsprint
+  - prealloc
+  - predeclared
+  - promlinter
+  - protogetter
+  - reassign
+  - recvcheck
+  - revive
+  - staticcheck
+  - tagalign
+  - tagliatelle
+  - testableexamples
+  - testifylint
+  - thelper
+  - tparallel
+  - unconvert
+  - unparam
+  - unused
+  - usestdlibvars
+  - usetesting
+  - wastedassign
+  - whitespace
+  - wrapcheck
+  exclusions:
+    warn-unused: true
+    rules:
+      # Exclude some linters from running on tests files.
+      - path: _test\.go
+        linters:
+          - funlen
