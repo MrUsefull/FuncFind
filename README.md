@@ -1,6 +1,6 @@
 # FuncFind
 
-[![CI](https://github.com/MrUsefull/FuncFind/workflows/CI/badge.svg)](https://github.com/MrUsefull/FuncFind/actions/workflows/ci.yml)
+[![CI](https://github.com/MrUsefull/FuncFind/workflows/CI/badge.svg)](https://github.com/MrUsefull/FuncFind/actions/workflows/ci.yml) [![codecov](https://codecov.io/github/MrUsefull/FuncFind/graph/badge.svg?token=P8FPJ5S7SO)](https://codecov.io/github/MrUsefull/FuncFind)
 
 FuncFind is a Go library for discovering functions by their return types using static analysis. It leverages Go's type system and the `go/types` package to efficiently find functions that return specific types across Go packages.
 
