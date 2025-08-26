@@ -2,6 +2,7 @@ package funcfind
 
 import (
 	"go/types"
+	"iter"
 	"slices"
 	"strings"
 	"testing"
@@ -78,6 +79,26 @@ func TestReturning(t *testing.T) {
 			assertAllExportedFns(t, got)
 		})
 	}
+}
+
+func TestEarlyYield(t *testing.T) {
+	t.Parallel()
+	gotIter, err := Returning("os", "error")
+	require.NoError(t, err)
+	assert.Equal(t, 2, findUptoNResults(t, gotIter, 2))
+}
+
+func findUptoNResults(tb testing.TB, gotIter iter.Seq[*types.Func], n int) int {
+	tb.Helper()
+	found := 0
+	for fn := range gotIter {
+		assert.NotNil(tb, fn)
+		found++
+		if found == n {
+			return found
+		}
+	}
+	return found
 }
 
 func assertAllExportedFns(tb testing.TB, fns []*types.Func) {
